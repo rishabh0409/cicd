@@ -24,7 +24,7 @@ pipeline{
                sh 'docker push rishabh0409/cicd:${BUILD_ID} '
                  }            
             }     
-         stage('kubernetes test ') {
+         stage('kubernetes helm instalation ') {
             steps {
                
                sh 'helm upgrade cicd    --set image.repository=rishabh0409/cicd:${BUILD_ID} chart/.'  
