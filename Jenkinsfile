@@ -27,7 +27,7 @@ pipeline{
          stage('kubernetes test ') {
             steps {
                
-               sh 'kubectl set image deploy/tomcatcicd webapp=rishabh0409/cicd:${BUILD_ID} '  
+               sh 'helm upgrade cicd    --set image.repository=rishabh0409/cicd:${BUILD_ID} chart/.'  
            }  
         }   
         
